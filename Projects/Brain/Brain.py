@@ -1,5 +1,5 @@
 # Api Key
-fileopen = open("E:\\Projects\\Modules\\Api.txt","r")
+fileopen = open("I:\\Projects\\Modules\\Api.txt","r")
 API = fileopen.read()
 fileopen.close()
 
@@ -14,7 +14,7 @@ load_dotenv()
 completion = openai.Completion()
 
 def ReplyBrain(question,chat_log = None):
-    FileLog = open("E:\\Projects\Logs\\chat_log.txt","r", encoding="utf-8", errors="replace")
+    FileLog = open("I:\\Projects\Logs\\chat_log.txt","r", encoding="utf-8", errors="replace")
     chat_log_template = FileLog.read()
     FileLog.close()
     if chat_log is None:
@@ -25,13 +25,13 @@ def ReplyBrain(question,chat_log = None):
         model = "text-davinci-002",
         prompt=prompt,
         temperature = 0.5,
-        max_tokens = 60,
+        max_tokens = 20,
         top_p = 0.3,
         frequency_penalty = 0.5,
         presence_penalty = 0)
     answer = response.choices[0].text.strip()
     chat_log_template_Update = chat_log_template + f"\nYou : {question} \nRaphael : {answer}"
-    FileLog = open("E:\\Projects\Logs\\chat_log.txt" ,"w", encoding="utf-8",errors="replace")
+    FileLog = open("I:\\Projects\Logs\\chat_log.txt" ,"w", encoding="utf-8",errors="replace")
     FileLog.write(chat_log_template_Update)
     FileLog.close()
     return answer

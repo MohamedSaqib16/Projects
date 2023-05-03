@@ -2,6 +2,7 @@ import pyaudio
 import struct
 import math
 import os
+from main import MainExecution
 
 INITIAL_TAP_THRESHOLD = 0.03 #0.01 - 1.5
 FORMAT = pyaudio.paInt16 
@@ -106,5 +107,7 @@ def Tester():
             print("")
             print("> Clap Detected : Starting Engine.")
             print("")
+            MainExecution()
+
             return "True-Mic"
         

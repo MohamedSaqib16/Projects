@@ -1,4 +1,10 @@
 import datetime
+import os
+import time
+import AppOpener
+import pyautogui
+
+from Modules.AppsLocaion import Rainmeter
 from Scripts.Speak import Speak
 
 def GreetMe():
@@ -11,3 +17,6 @@ def GreetMe():
 
     else:
         Speak("Good Evening!")
+
+
+
